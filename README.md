@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
+Campus Events Application
+A responsive web application built with Next.js and TypeScript that connects to a NestJS backend API to manage and explore campus events.
+Technologies Used
+- Next.js and React
+- TypeScript
+- Tailwind CSS
+- Native Fetch API
+- NestJS REST API
+Features
+- Home page with event discovery.
+- Browse and view event details.
+- Search events by title.
+- Filter by category, location, and publication status.
+- Sort and paginate event listings.
+- View event sessions and session details.
+- User registration, login, and logout.
+- Admin-only event creation.
+- API error handling and responsive design.
+Getting Started
+Installation
+git clone YOUR_GITHUB_REPOSITORY_URL
+cd campus-events-frontend
+npm install
+Environment Variables
+Create a .env.local file in the project root:
+CAMPUS_EVENTS_API_URL=http://localhost:3006/api
+CAMPUS_EVENTS_API_KEY=your_api_key
+Replace your_api_key with your actual backend API key. Never commit .env.local to GitHub.
+Run the Application
+Start the NestJS backend, then run:
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open http://localhost:3001.
+Project Structure
+src/
+├── app/
+│   ├── admin/
+│   ├── api/
+│   │   ├── auth/
+│   │   └── events/
+│   ├── create-event/
+│   ├── events/
+│   │   └── [id]/
+│   │       └── sessions/
+│   │           └── [sessionId]/
+│   ├── login/
+│   ├── register/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── CreateEventForm.tsx
+│   ├── Footer.tsx
+│   ├── LogoutButton.tsx
+│   └── Navbar.tsx
+├── services/
+│   └── eventServices.ts
+└── types/
+    └── event.ts
+API Integration
+The application uses the native Fetch API and Next.js API routes to communicate with the NestJS backend.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Main operations include retrieving events, upcoming events, event details, sessions, and creating events.
+Author
+Developed as part of the CodeOps Module 4 Campus Events Application project.
